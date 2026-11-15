@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://j6fupwvsffab" path="res://assets/scripts/main.gd" id="1_06ig3"]
 [ext_resource type="PackedScene" uid="uid://bir3u3c7je65t" path="res://assets/scenes/player.tscn" id="2_2d37k"]
+[ext_resource type="Script" uid="uid://c6de0aj6i4kg6" path="res://assets/canvas_layer.gd" id="4_836ik"]
 [ext_resource type="PackedScene" uid="uid://bv60yvwrt2ro6" path="res://assets/scenes/ground.tscn" id="6_m5usj"]
+[ext_resource type="PackedScene" uid="uid://bslk3gi0a3oko" path="res://assets/scenes/base_wall.tscn" id="8_tkxyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8qdo"]
 size = Vector2(480, 124)
@@ -22,5 +24,18 @@ shape = SubResource("RectangleShape2D_o8qdo")
 [node name="Timer" type="Timer" parent="." unique_id=115748341]
 wait_time = 0.5
 
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1317614879]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1562881993]
+follow_viewport_enabled = true
+script = ExtResource("4_836ik")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1310567545]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BaseWall" parent="." unique_id=172977510 instance=ExtResource("8_tkxyu")]
+
 [connection signal="body_entered" from="Die" to="Die" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

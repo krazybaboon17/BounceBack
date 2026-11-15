@@ -9,6 +9,11 @@ var rightBlank = preload("res://blank_right.tscn")
 var baseGround = preload("res://assets/scenes/base_ground.tscn")
 var rightGroundNode = preload("res://right_ground.tscn")
 var left_bouncer
+
+var score = 0
+@onready var canvas_layer = $CanvasLayer
+
+
 var left_slime
 var right_blank
 var left_blank
@@ -28,8 +33,8 @@ var thing = true
 #Add weights to the randomness
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	canvas_layer.updateScore(str(0))
 	
-		
 	drawLeft()
 	drawRight()
 	randomize()
@@ -37,8 +42,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	canvas_layer.updateScore(str(score))
 	if (Input.is_action_pressed("space") and thing):
 		$Timer.start()
+		$ScoreTimer.start()
 		thing = false
 func drawLeft():
 	for i in 8:
@@ -132,3 +139,7 @@ func _on_timer_timeout() -> void:
 		
 	drawRight()
 	drawLeft()
+
+
+func _on_score_timer_timeout() -> void:
+	score += 1
