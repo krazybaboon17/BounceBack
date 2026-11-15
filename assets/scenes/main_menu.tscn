@@ -24,10 +24,10 @@ texture = ExtResource("2_57ux2")
 [node name="Button" type="Button" parent="." unique_id=396571555]
 texture_filter = 1
 layout_mode = 0
-offset_left = 62.000004
-offset_top = 439.0
+offset_left = 62.0
+offset_top = 480.00003
 offset_right = 176.0
-offset_bottom = 496.0
+offset_bottom = 537.0
 scale = Vector2(3, 3)
 theme_override_fonts/font = ExtResource("3_f2xsc")
 theme_override_font_sizes/font_size = 48
@@ -59,6 +59,6 @@ text = "1. Jump(space) to begin the game
 5. left and right movements 
     only after jumping. 
 6. No jumps in the air
-7. PRESS START TO BEGIN!!!"
+7. PRESS PLAY TO BEGIN!!!"
 
 [connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]
