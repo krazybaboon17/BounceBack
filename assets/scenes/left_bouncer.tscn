@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6jxfnxvwu1rs"]
 
 [ext_resource type="Texture2D" uid="uid://bkrhkymgs82mt" path="res://assets/images/leftBouncerAnimation.png" id="1_ff4y1"]
+[ext_resource type="Script" uid="uid://b2ndjsn2unywy" path="res://assets/scripts/left_bouncer.gd" id="1_q0o0f"]
 [ext_resource type="Texture2D" uid="uid://dksc068ry5x0t" path="res://assets/images/leftBouncer.png" id="1_uke57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8qdo"]
@@ -34,6 +35,7 @@ animations = [{
 }]
 
 [node name="LeftBouncer" type="Area2D" unique_id=862283946]
+script = ExtResource("1_q0o0f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028340189]
 position = Vector2(28, 48)
@@ -44,3 +46,5 @@ position = Vector2(58, 48)
 sprite_frames = SubResource("SpriteFrames_mhvgj")
 autoplay = "default"
 metadata/_edit_group_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

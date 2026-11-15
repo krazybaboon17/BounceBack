@@ -2,6 +2,15 @@ extends CharacterBody2D
 
 @export var speed: float = 400.0
 @export var gravity: float = 1200.0
+@export var wall_bounce_speed: float = 450.0 
+@export var wall_climb_force: float = -550.0   
+
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
+@export var left_boundary: float = -175.0
+@export var right_boundary: float = 440.0
+
+var is_bouncing: bool = false
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -38,3 +47,19 @@ func _physics_process(delta: float) -> void:
 			velocity.x = -wallNormalX * 10
 			
 	move_and_slide()
+	
+	# Partner's clamping logic applied after movement
+	global_position.x = clamp(global_position.x, left_boundary, right_boundary)
+
+# Partner's new wall bounce animation function
+func trigger_wall_bounce() -> void:
+	if is_bouncing:
+		return
+	is_bouncing = true
+	
+	anim.play("bounce")
+	
+	await get_tree().create_timer(0.15).timeout
+	
+	anim.play("default")
+	is_bouncing = false
