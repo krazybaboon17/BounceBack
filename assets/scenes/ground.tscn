@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bv60yvwrt2ro6"]
+
+[ext_resource type="Texture2D" uid="uid://ba1xgkngre7hk" path="res://assets/images/bottomPlatforn.png" id="1_dk3sc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvgj"]
+size = Vector2(96, 18)
+
+[node name="Ground" type="Area2D" unique_id=1543745966]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1398289840]
+texture = ExtResource("1_dk3sc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152642483]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_mhvgj")
