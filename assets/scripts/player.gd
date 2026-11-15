@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 func trigger_wall_bounce() -> void:
 	if is_bouncing:
 		return
+	$AudioStreamPlayer2D.play()
 	is_bouncing = true
 	
 	anim.play("bounce")

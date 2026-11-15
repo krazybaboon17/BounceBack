@@ -15,7 +15,7 @@ var right_ground
 var base_ground
 var tileOptions = ["Bounce", "Slime", "Ground"]
 var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
-
+var rTiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
 var thing = true
 #Array with the order of all the tiles
 #Every n seconds, the first element is popped, to replace with a new, randomly generated one at the top
@@ -63,19 +63,19 @@ func drawLeft():
 func drawRight():
 	for i in 8:
 		
-		if (tiles[i] == "Bounce"):
+		if (rTiles[i] == "Bounce"):
 			right_bouncer = rightBouncer.instantiate()
 			right_bouncer.position = Vector2(1, 672 - (i * 96))
 			right_bouncer.add_to_group("walls")
 			add_child(right_bouncer)
 			
-		if (tiles[i] == "Slime"):
+		if (rTiles[i] == "Slime"):
 			right_slime = rightSlime.instantiate()
 			right_slime.position = Vector2(1, 672 - (i * 96))
 			right_slime.add_to_group("walls")
 			right_slime.add_to_group("slimes")
 			add_child(right_slime)
-		if (tiles[i] == "Ground"):
+		if (rTiles[i] == "Ground"):
 			right_ground = rightGroundNode.instantiate()
 			right_ground.position = Vector2(1, 672 - (i * 96))
 			right_ground.add_to_group("walls")
@@ -94,6 +94,19 @@ func _on_timer_timeout() -> void:
 		tile = tileOptions[2]
 	tiles.remove_at(0)
 	tiles.append(tile)
+	
+	num = randf_range(0, 100)
+	if (num < 60):
+		tile = tileOptions[0]
+	elif (num < 90):
+		tile = tileOptions[1]
+	else:
+		tile = tileOptions[2]
+	rTiles.remove_at(0)
+	rTiles.append(tile)
+	
+	rTiles.remove_at(0)
+	rTiles.append(tile)
 	
 	for i in get_tree().get_nodes_in_group("walls"):
 		i.queue_free()
