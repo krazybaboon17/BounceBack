@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bir3u3c7je65t" path="res://assets/scenes/player.tscn" id="2_2d37k"]
 [ext_resource type="Texture2D" uid="uid://c3nrmqxbfrabr" path="res://assets/images/skyBackground 22.jpg" id="3_ujfqy"]
 [ext_resource type="Script" uid="uid://c6de0aj6i4kg6" path="res://assets/canvas_layer.gd" id="4_836ik"]
+[ext_resource type="FontFile" uid="uid://c8jaiegg18ydk" path="res://assets/ARCADECLASSIC.TTF" id="5_ujfqy"]
 [ext_resource type="PackedScene" uid="uid://bv60yvwrt2ro6" path="res://assets/scenes/ground.tscn" id="6_m5usj"]
 [ext_resource type="PackedScene" uid="uid://bslk3gi0a3oko" path="res://assets/scenes/base_wall.tscn" id="8_tkxyu"]
 
@@ -38,8 +39,10 @@ follow_viewport_enabled = true
 script = ExtResource("4_836ik")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1310567545]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 480.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("5_ujfqy")
+theme_override_font_sizes/font_size = 64
 
 [node name="BaseWall" parent="." unique_id=172977510 instance=ExtResource("8_tkxyu")]
 

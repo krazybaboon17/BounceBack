@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func updateScore(score):
-	$Label.text = score
+	$Label.text = "Score: " + score
 	$Label.show()
 	
 	
