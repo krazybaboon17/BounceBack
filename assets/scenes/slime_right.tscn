@@ -36,8 +36,9 @@ animations = [{
 [node name="SlimeRight" type="Area2D" unique_id=1868535267]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063880622]
-position = Vector2(30, 0)
+position = Vector2(452, 48)
 shape = SubResource("RectangleShape2D_nvnwx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1658048154]
+position = Vector2(422, 48)
 sprite_frames = SubResource("SpriteFrames_mhvgj")

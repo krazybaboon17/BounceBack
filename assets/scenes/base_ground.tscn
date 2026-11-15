@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ba1xgkngre7hk" path="res://assets/images/bottomPlatforn.png" id="1_rv70s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m3iv"]
+size = Vector2(476, 75)
+
 [node name="BaseGround" type="Area2D" unique_id=1027785997]
 position = Vector2(2, -3)
 
@@ -11,3 +14,5 @@ scale = Vector2(4.958333, 4.166667)
 texture = ExtResource("1_rv70s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315600186]
+position = Vector2(237, 93.5)
+shape = SubResource("RectangleShape2D_8m3iv")

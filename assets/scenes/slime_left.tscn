@@ -36,9 +36,10 @@ animations = [{
 [node name="SlimeLeft" type="Area2D" unique_id=1535428874]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744324023]
-position = Vector2(-30, 0)
+position = Vector2(28, 48)
 shape = SubResource("RectangleShape2D_mhvgj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=138058390]
+position = Vector2(58, 48)
 sprite_frames = SubResource("SpriteFrames_mhvgj")
-animation = &"bounce"
+autoplay = "default"
