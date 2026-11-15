@@ -5,6 +5,7 @@ extends Node2D
 @export var rightSlime: PackedScene
 @export var groundNode: PackedScene
 var baseGround = preload("res://assets/scenes/base_ground.tscn")
+var rightGroundNode = preload("res://right_ground.tscn")
 var left_bouncer
 var left_slime
 var right_bouncer
@@ -68,7 +69,7 @@ func drawRight():
 			right_slime.add_to_group("walls")
 			add_child(right_slime)
 		if (tiles[i] == "Ground"):
-			right_ground = groundNode.instantiate()
+			right_ground = rightGroundNode.instantiate()
 			right_ground.position = Vector2(1, 672 - (i * 96))
 			right_ground.add_to_group("walls")
 			add_child(right_ground)
