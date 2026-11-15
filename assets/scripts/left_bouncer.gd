@@ -2,8 +2,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		# Push right (positive X) and launch up (negative Y)
-		body.velocity.x = 400.0  
-		body.velocity.y = -500.0 
+		body.velocity.x = 1350.0  
+		body.velocity.y = -600.0 
 		if body.has_method("trigger_wall_bounce"):
 			body.trigger_wall_bounce()
