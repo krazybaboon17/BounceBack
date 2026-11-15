@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cr2sm0nwi1lke"]
+
+[ext_resource type="Script" uid="uid://dcb1eyxvfxv4f" path="res://assets/scripts/end_screen.gd" id="1_lg15y"]
+[ext_resource type="FontFile" uid="uid://ouhxcdkqwe2s" path="res://assets/fonts/ARCADECLASSIC.TTF" id="1_ykoqj"]
+[ext_resource type="Texture2D" uid="uid://ch761puxmgtxq" path="res://assets/images/endBackground.jpg" id="2_sltoc"]
+
+[node name="EndScreen" type="Control" unique_id=452762184]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 482.0
+offset_bottom = 767.0
+script = ExtResource("1_lg15y")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1423135549]
+layout_mode = 0
+offset_left = -104.0
+offset_top = -96.0
+offset_right = 576.0
+offset_bottom = 864.0
+texture = ExtResource("2_sltoc")
+
+[node name="Label" type="Label" parent="." unique_id=596504178]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.000004
+offset_top = 31.0
+offset_right = 136.0
+offset_bottom = 90.0
+scale = Vector2(6, 6)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ykoqj")
+theme_override_font_sizes/font_size = 27
+text = "GAME     
+OVER"
+
+[node name="Button" type="Button" parent="." unique_id=183997380]
+texture_filter = 1
+layout_mode = 0
+offset_left = 57.0
+offset_top = 399.0
+offset_right = 427.0
+offset_bottom = 718.0
+theme_override_fonts/font = ExtResource("1_ykoqj")
+theme_override_font_sizes/font_size = 125
+text = "Play 
+Again"
+
+[connection signal="pressed" from="Button" to="." method="_on_play_again_button_pressed"]

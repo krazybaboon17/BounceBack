@@ -55,7 +55,7 @@ scale = Vector2(1.5, 1.5)
 text = "1. Jump(space) to begin the game
 2. Orange is jump pads
 3. Green is slime
-4. Hop on a platform for a break
+4. Hop on the platforms for a break
 5. left and right movements 
     only after jumping
 6. PRESS START TO BEGIN!!!"
