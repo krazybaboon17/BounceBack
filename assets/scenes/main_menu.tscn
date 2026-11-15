@@ -57,7 +57,8 @@ text = "1. Jump(space) to begin the game
 3. Green is slime
 4. Hop on the platforms for a break
 5. left and right movements 
-    only after jumping
-6. PRESS START TO BEGIN!!!"
+    only after jumping. 
+6. No jumps in the air
+7. PRESS START TO BEGIN!!!"
 
 [connection signal="pressed" from="Button" to="." method="_on_play_button_pressed"]
