@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ytqxs36g85id"]
+
+[ext_resource type="Script" uid="uid://j6fupwvsffab" path="res://assets/scenes/main.gd" id="1_06ig3"]
+[ext_resource type="PackedScene" uid="uid://bir3u3c7je65t" path="res://assets/scenes/player.tscn" id="2_2d37k"]
+[ext_resource type="PackedScene" uid="uid://c6jxfnxvwu1rs" path="res://assets/scenes/left_bouncer.tscn" id="2_qdlv5"]
+[ext_resource type="PackedScene" uid="uid://b6u2skyx7mfyi" path="res://assets/scenes/slime_left.tscn" id="3_tkxyu"]
+[ext_resource type="PackedScene" uid="uid://dti2wewskchdm" path="res://assets/scenes/right_bouncer.tscn" id="4_fphxj"]
+[ext_resource type="PackedScene" uid="uid://qduqdqykkv8w" path="res://assets/scenes/slime_right.tscn" id="5_vqaxa"]
+[ext_resource type="PackedScene" uid="uid://bv60yvwrt2ro6" path="res://assets/scenes/ground.tscn" id="6_m5usj"]
+[ext_resource type="PackedScene" uid="uid://bslk3gi0a3oko" path="res://assets/scenes/base_wall.tscn" id="8_tkxyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8qdo"]
+size = Vector2(480, 124)
+
+[node name="Main" type="Node2D" unique_id=842726938]
+script = ExtResource("1_06ig3")
+leftBouncer = ExtResource("2_qdlv5")
+leftSlime = ExtResource("3_tkxyu")
+rightBouncer = ExtResource("4_fphxj")
+rightSlime = ExtResource("5_vqaxa")
+groundNode = ExtResource("6_m5usj")
+
+[node name="Die" type="Area2D" parent="." unique_id=803480815]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die" unique_id=313879292]
+position = Vector2(240, 830)
+shape = SubResource("RectangleShape2D_o8qdo")
+
+[node name="Player" parent="." unique_id=809717538 instance=ExtResource("2_2d37k")]
+
+[node name="Timer" type="Timer" parent="." unique_id=115748341]
+wait_time = 0.5
+
+[node name="BaseWall" parent="." unique_id=172977510 instance=ExtResource("8_tkxyu")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

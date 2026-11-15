@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bpk53x2leqcj4"]
+
+[ext_resource type="Texture2D" uid="uid://mu8q8vvv121d" path="res://assets/images/slimeLeft.png" id="1_ex3x3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvgj"]
+size = Vector2(36, 96)
+
+[node name="SlimeLeft" type="Area2D" unique_id=1535428874]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1103568430]
+texture = ExtResource("1_ex3x3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744324023]
+position = Vector2(-30, 0)
+shape = SubResource("RectangleShape2D_mhvgj")

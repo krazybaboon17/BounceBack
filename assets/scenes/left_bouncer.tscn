@@ -36,9 +36,11 @@ animations = [{
 [node name="LeftBouncer" type="Area2D" unique_id=862283946]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028340189]
-position = Vector2(-30, 0)
+position = Vector2(28, 48)
 shape = SubResource("RectangleShape2D_o8qdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=487000587]
+position = Vector2(58, 48)
 sprite_frames = SubResource("SpriteFrames_mhvgj")
-animation = &"bounce"
+autoplay = "default"
+metadata/_edit_group_ = true
