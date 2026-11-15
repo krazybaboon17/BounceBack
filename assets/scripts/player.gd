@@ -42,16 +42,15 @@ func _physics_process(delta: float) -> void:
 		velocity.y = slimeFallSpeed
 		
 		if direction == 0:
-			# Apply a tiny micro-force against the wall's normal 
-			# to keep the player completely stuck to it
+			
 			velocity.x = -wallNormalX * 10
 			
 	move_and_slide()
 	
-	# Partner's clamping logic applied after movement
+	
 	global_position.x = clamp(global_position.x, left_boundary, right_boundary)
 
-# Partner's new wall bounce animation function
+
 func trigger_wall_bounce() -> void:
 	if is_bouncing:
 		return

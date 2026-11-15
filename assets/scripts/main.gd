@@ -1,8 +1,8 @@
 extends Node2D
-@export var leftBouncer: PackedScene
-@export var leftSlime: PackedScene
-@export var rightBouncer: PackedScene
-@export var rightSlime: PackedScene
+var leftBouncer = preload("res://assets/scenes/left_bouncer.tscn")
+var rightBouncer = preload("res://assets/scenes/right_bouncer.tscn")
+var leftSlime = preload("res://assets/scenes/slime_left.tscn")
+var rightSlime = preload("res://assets/scenes/slime_right.tscn")
 @export var groundNode: PackedScene
 var baseGround = preload("res://assets/scenes/base_ground.tscn")
 var rightGroundNode = preload("res://right_ground.tscn")
@@ -14,7 +14,7 @@ var left_ground
 var right_ground
 var base_ground
 var tileOptions = ["Bounce", "Slime", "Ground"]
-var tiles = ["BaseGround", "Bouncer", "Bouncer", "Bouncer", "Bouncer", "Bouncer", "Bouncer", "Bouncer"]
+var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
 
 var thing = true
 #Array with the order of all the tiles
