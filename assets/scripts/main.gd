@@ -15,13 +15,15 @@ var right_ground
 var base_ground
 var tileOptions = ["Bounce", "Slime", "Ground"]
 var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+
+var thing = true
 #Array with the order of all the tiles
 #Every n seconds, the first element is popped, to replace with a new, randomly generated one at the top
 #Add weights to the randomness
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if (Input.is_action_pressed("space")):
-		$Timer.start()
+	
+		
 	drawLeft()
 	drawRight()
 	randomize()
@@ -29,7 +31,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (Input.is_action_pressed("space") and thing):
+		$Timer.start()
+		thing = false
 func drawLeft():
 	for i in 8:
 		
