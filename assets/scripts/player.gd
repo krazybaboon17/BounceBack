@@ -1,5 +1,7 @@
 extends CharacterBody2D
-
+var lDirection: float = 0.0
+var isOnSlime = false
+var wallNormalX = 0.0
 @export var speed: float = 400.0
 @export var gravity: float = 1200.0
 @export var wall_bounce_speed: float = 450.0 
@@ -31,8 +33,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed * delta * 15)
 
 	var slimeFallSpeed = 50
-	var isOnSlime = false
-	var wallNormalX = 0.0
+	
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -40,13 +41,15 @@ func _physics_process(delta: float) -> void:
 		
 		if hitObject and hitObject.is_in_group("slimes"):
 			isOnSlime = true
-			wallNormalX = collision.get_normal().x
+			if abs(collision.get_normal().x) > 0.5:
+				wallNormalX = collision.get_normal().x
 			
+	if is_on_floor():
+		isOnSlime = false
+
 	if isOnSlime:
 		velocity.y = slimeFallSpeed
-		
-		if direction == 0:
-			velocity.x = -wallNormalX * 10
+		velocity.x = -wallNormalX * 100
 			
 	move_and_slide()
 	
@@ -59,6 +62,7 @@ func trigger_wall_bounce() -> void:
 	
 	$AudioStreamPlayer2D.play()
 	is_bouncing = true
+	isOnSlime = false
 	anim.play("bounce")
 	
 	if global_position.x < 0.0:

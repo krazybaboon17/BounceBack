@@ -14,8 +14,10 @@ var left_ground
 var right_ground
 var base_ground
 var tileOptions = ["Bounce", "Slime", "Ground"]
-var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
-var rTiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+#var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+#var rTiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+var tiles = ["BaseGround", "Slime", "Slime","Slime","Slime","Slime","Slime","Slime"]
+var rTiles = ["BaseGround", "Slime", "Slime","Slime","Slime","Slime","Slime","Slime"]
 var thing = true
 #Array with the order of all the tiles
 #Every n seconds, the first element is popped, to replace with a new, randomly generated one at the top
