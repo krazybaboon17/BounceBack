@@ -8,9 +8,9 @@ size = Vector2(96, 18)
 [node name="Ground" type="Area2D" unique_id=1543745966]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1398289840]
-position = Vector2(48, 0)
+position = Vector2(48, 48)
 texture = ExtResource("1_dk3sc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152642483]
-position = Vector2(48, 39)
+position = Vector2(48, 87)
 shape = SubResource("RectangleShape2D_mhvgj")
