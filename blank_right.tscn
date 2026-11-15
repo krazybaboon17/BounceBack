@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cod8m640wldru"]
+
+[ext_resource type="Texture2D" uid="uid://h172aw1b8uks" path="res://assets/images/blankRight.png" id="1_enarv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8qdo"]
+size = Vector2(6, 192)
+
+[node name="BlankRight" type="Area2D" unique_id=1345942749]
+
+[node name="BlankRight" type="Sprite2D" parent="." unique_id=1943333755]
+position = Vector2(432, 48)
+texture = ExtResource("1_enarv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=687065132]
+position = Vector2(477, 96)
+shape = SubResource("RectangleShape2D_o8qdo")
+
+[node name="BlankRight2" type="Sprite2D" parent="." unique_id=823674152]
+position = Vector2(432, 144)
+texture = ExtResource("1_enarv")

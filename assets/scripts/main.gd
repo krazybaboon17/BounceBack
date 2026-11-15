@@ -3,21 +3,25 @@ var leftBouncer = preload("res://assets/scenes/left_bouncer.tscn")
 var rightBouncer = preload("res://assets/scenes/right_bouncer.tscn")
 var leftSlime = preload("res://assets/scenes/slime_left.tscn")
 var rightSlime = preload("res://assets/scenes/slime_right.tscn")
+var leftBlank = preload("res://blank_left.tscn")
+var rightBlank = preload("res://blank_right.tscn")
 @export var groundNode: PackedScene
 var baseGround = preload("res://assets/scenes/base_ground.tscn")
 var rightGroundNode = preload("res://right_ground.tscn")
 var left_bouncer
 var left_slime
+var right_blank
+var left_blank
 var right_bouncer
 var right_slime
 var left_ground
 var right_ground
 var base_ground
 var tileOptions = ["Bounce", "Slime", "Ground"]
-#var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
-#var rTiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
-var tiles = ["BaseGround", "Slime", "Slime","Slime","Slime","Slime","Slime","Slime"]
-var rTiles = ["BaseGround", "Slime", "Slime","Slime","Slime","Slime","Slime","Slime"]
+var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+var rTiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+#var tiles = ["BaseGround", "Slime", "Slime","Slime","Slime","Slime","Slime","Slime"]
+#var rTiles = ["BaseGround", "Slime", "Slime","Slime","Slime","Slime","Slime","Slime"]
 var thing = true
 #Array with the order of all the tiles
 #Every n seconds, the first element is popped, to replace with a new, randomly generated one at the top
@@ -62,6 +66,7 @@ func drawLeft():
 			base_ground.add_to_group("walls")
 			add_child(base_ground)
 			
+			
 func drawRight():
 	for i in 8:
 		
@@ -79,45 +84,51 @@ func drawRight():
 			add_child(right_slime)
 		if (rTiles[i] == "Ground"):
 			right_ground = rightGroundNode.instantiate()
-			right_ground.position = Vector2(1, 672 - (i * 96))
+			right_ground.position = Vector2(1, 672 - ((i + 1) * 96))
 			right_ground.add_to_group("walls")
 			add_child(right_ground)
+		if (tiles[i] == "BaseGround"):
+			base_ground = baseGround.instantiate()
+			base_ground.position = Vector2(10, 672 - (i * 96))
+			base_ground.add_to_group("walls")
+			add_child(base_ground)
+			
 		
 
 
 func _on_timer_timeout() -> void:
-	var num = randf_range(0, 100)
-	var tile
-	if (num < 60):
-		tile = tileOptions[0]
-	elif (num < 90):
-		tile = tileOptions[1]
+	var numL = randf_range(0, 100)
+	var tileL
+	if (numL < 60):
+		tileL = "Bounce"
+	elif (numL < 90):
+		tileL = "Slime"
 	else:
-		tile = tileOptions[2]
+		tileL = "Ground"
+		
+	if tileL == "Ground" and tiles.back() == "Ground":
+		tileL = "Bounce"
+		
 	tiles.remove_at(0)
-	tiles.append(tile)
+	tiles.append(tileL)
 	
-	num = randf_range(0, 100)
-	if (num < 60):
-		tile = tileOptions[0]
-	elif (num < 90):
-		tile = tileOptions[1]
+	var numR = randf_range(0, 100)
+	var tileR
+	if (numR < 60):
+		tileR = "Bounce"
+	elif (numR < 90):
+		tileR = "Slime"
 	else:
-		tile = tileOptions[2]
+		tileR = "Ground"
+		
+	if tileR == "Ground" and rTiles.back() == "Ground":
+		tileR = "Bounce"
+		
 	rTiles.remove_at(0)
-	rTiles.append(tile)
-	
-	rTiles.remove_at(0)
-	rTiles.append(tile)
+	rTiles.append(tileR)
 	
 	for i in get_tree().get_nodes_in_group("walls"):
 		i.queue_free()
+		
 	drawRight()
 	drawLeft()
-	
-	
-	
-	
-		
-		
-	

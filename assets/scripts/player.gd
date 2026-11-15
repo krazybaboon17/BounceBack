@@ -2,6 +2,7 @@ extends CharacterBody2D
 var lDirection: float = 0.0
 var isOnSlime = false
 var wallNormalX = 0.0
+var isOnGround = false
 @export var speed: float = 400.0
 @export var gravity: float = 1200.0
 @export var wall_bounce_speed: float = 450.0 
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * delta * 15)
 
-	var slimeFallSpeed = 50
+	var slimeFallSpeed = 100
 	
 	
 	for i in get_slide_collision_count():
