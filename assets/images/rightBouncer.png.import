@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di630m2f8b3t7"
-path="res://.godot/imported/Black.png-7579103388df317c8c1bcccb29fb5e9b.ctex"
+uid="uid://dxygx3qhjam1j"
+path="res://.godot/imported/rightBouncer.png-769d53f0bf04ef2f639905c8f4292cb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Black.png"
-dest_files=["res://.godot/imported/Black.png-7579103388df317c8c1bcccb29fb5e9b.ctex"]
+source_file="res://assets/images/rightBouncer.png"
+dest_files=["res://.godot/imported/rightBouncer.png-769d53f0bf04ef2f639905c8f4292cb5.ctex"]
 
 [params]
 

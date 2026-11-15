@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxygx3qhjam1j"
-path="res://.godot/imported/rightBouncer.png-22372df2b8e4512bf5c19bcdc0cecd51.ctex"
+uid="uid://dksc068ry5x0t"
+path="res://.godot/imported/leftBouncer.png-eed6163be14df925f3a5d197edf84007.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rightBouncer.png"
-dest_files=["res://.godot/imported/rightBouncer.png-22372df2b8e4512bf5c19bcdc0cecd51.ctex"]
+source_file="res://assets/images/leftBouncer.png"
+dest_files=["res://.godot/imported/leftBouncer.png-eed6163be14df925f3a5d197edf84007.ctex"]
 
 [params]
 
