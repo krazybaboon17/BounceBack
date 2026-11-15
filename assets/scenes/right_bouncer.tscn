@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dti2wewskchdm"]
 
 [ext_resource type="Texture2D" uid="uid://dxygx3qhjam1j" path="res://assets/images/rightBouncer.png" id="1_0d6xo"]
+[ext_resource type="Script" uid="uid://c4tdsspklct7g" path="res://assets/scripts/right_bouncer.gd" id="1_7c538"]
 [ext_resource type="Texture2D" uid="uid://bhjadu3861cii" path="res://assets/images/rightBouncerAnimation.png" id="1_x3okr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og7xu"]
@@ -34,6 +35,7 @@ animations = [{
 }]
 
 [node name="RightBouncer" type="Area2D" unique_id=898744737]
+script = ExtResource("1_7c538")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980274763]
 position = Vector2(452, 48)
@@ -43,3 +45,5 @@ shape = SubResource("RectangleShape2D_og7xu")
 position = Vector2(422, 48)
 sprite_frames = SubResource("SpriteFrames_mhvgj")
 autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

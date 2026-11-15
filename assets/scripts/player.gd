@@ -1,25 +1,41 @@
 extends CharacterBody2D
 @export var speed: float = 400.0
 @export var gravity: float = 1200.0
+@export var wall_bounce_speed: float = 450.0 
+@export var wall_climb_force: float = -550.0   
 
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
+@export var left_boundary: float = -175.0
+@export var right_boundary: float = 440.0
+
+var is_bouncing: bool = false
 func _physics_process(delta: float) -> void:
-	# 1. Apply gravity if not on the floor
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
 		velocity.y = 0.0
-		if (Input.is_action_pressed("space")):
+		if(Input.is_action_pressed("space")):
 			velocity.y = -400
-	position.y += velocity.y * delta # Reset vertical velocity when landing on the ground
-
-	# 2. Basic left and right movement
+	position.y += velocity.y * delta
+		
 	var direction := Input.get_axis("left", "right")
 	if direction != 0:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * delta * 15)
 
-	# 3. Move and handle collisions with the ground
 	move_and_slide()
+	global_position.x = clamp(global_position.x, left_boundary, right_boundary)
 	
+func trigger_wall_bounce() -> void:
+	if is_bouncing:
+		return
+	is_bouncing = true
 	
+	anim.play("bounce")
+	
+	await get_tree().create_timer(0.15).timeout
+	
+	anim.play("default")
+	is_bouncing = false
