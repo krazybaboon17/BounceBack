@@ -18,6 +18,7 @@ var locked_direction: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	if global_position.y > 800:
+		
 		get_tree().change_scene_to_file("res://assets/scenes/end_screen.tscn")
 	if not is_on_floor():
 		velocity.y += gravity * delta

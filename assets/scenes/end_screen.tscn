@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dcb1eyxvfxv4f" path="res://assets/scripts/end_screen.gd" id="1_lg15y"]
 [ext_resource type="FontFile" uid="uid://ouhxcdkqwe2s" path="res://assets/fonts/ARCADECLASSIC.TTF" id="1_ykoqj"]
 [ext_resource type="Texture2D" uid="uid://bvuqyqr11s7or" path="res://assets/images/orangeBackground.jpg" id="2_sltoc"]
+[ext_resource type="FontFile" uid="uid://c8jaiegg18ydk" path="res://assets/ARCADECLASSIC.TTF" id="4_f1xfu"]
 
 [node name="EndScreen" type="Control" unique_id=452762184]
 layout_mode = 3
@@ -45,5 +46,17 @@ theme_override_fonts/font = ExtResource("1_ykoqj")
 theme_override_font_sizes/font_size = 125
 text = "Play 
 Again"
+
+[node name="Label2" type="Label" parent="." unique_id=1254367988]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 361.0
+offset_right = 479.0
+offset_bottom = 411.0
+theme_override_fonts/font = ExtResource("4_f1xfu")
+theme_override_font_sizes/font_size = 30
+text = "Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_play_again_button_pressed"]
