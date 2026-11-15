@@ -1,26 +1,13 @@
 [gd_scene format=3 uid="uid://cja8dk06l1m87"]
 
 [ext_resource type="Texture2D" uid="uid://ba1xgkngre7hk" path="res://assets/images/bottomPlatforn.png" id="1_rv70s"]
-
-[sub_resource type="GDScript" id="GDScript_rv70s"]
-script/source = "extends StaticBody2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[ext_resource type="Script" uid="uid://pvwhsnhrr23c" path="res://assets/scenes/base_ground.gd" id="1_ynp3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m3iv"]
 size = Vector2(476, 75)
 
-[node name="BaseGround" type="StaticBody2D" unique_id=2121926623]
-script = SubResource("GDScript_rv70s")
+[node name="BaseGround" type="StaticBody2D" unique_id=1133484680]
+script = ExtResource("1_ynp3x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314950566]
 position = Vector2(237, -69)

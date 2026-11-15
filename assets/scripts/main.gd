@@ -20,7 +20,8 @@ var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bo
 #Add weights to the randomness
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Timer.start()
+	if (Input.is_action_pressed("space")):
+		$Timer.start()
 	drawLeft()
 	drawRight()
 	randomize()

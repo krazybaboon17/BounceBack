@@ -7,7 +7,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
-		velocity.y = 0.0 # Reset vertical velocity when landing on the ground
+		velocity.y = 0.0
+		if (Input.is_action_pressed("space")):
+			velocity.y = -400
+	position.y += velocity.y * delta # Reset vertical velocity when landing on the ground
 
 	# 2. Basic left and right movement
 	var direction := Input.get_axis("left", "right")
@@ -18,4 +21,5 @@ func _physics_process(delta: float) -> void:
 
 	# 3. Move and handle collisions with the ground
 	move_and_slide()
+	
 	
