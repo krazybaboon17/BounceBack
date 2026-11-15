@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		
 		if hitObject and hitObject.is_in_group("slimes"):
 			isOnSlime = true
-			# Get the direction the wall is facing
+			
 			wallNormalX = collision.get_normal().x
 			
 	if isOnSlime:
