@@ -1,15 +1,44 @@
 [gd_scene format=3 uid="uid://c6jxfnxvwu1rs"]
 
+[ext_resource type="Texture2D" uid="uid://bkrhkymgs82mt" path="res://assets/images/leftBouncerAnimation.png" id="1_ff4y1"]
 [ext_resource type="Texture2D" uid="uid://dksc068ry5x0t" path="res://assets/images/leftBouncer.png" id="1_uke57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8qdo"]
 size = Vector2(36, 96)
 
-[node name="LeftBouncer" type="Area2D" unique_id=862283946]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0o0f"]
+atlas = ExtResource("1_ff4y1")
+region = Rect2(0, 0, 96, 96)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=752275408]
-texture = ExtResource("1_uke57")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v1e3"]
+atlas = ExtResource("1_uke57")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhvgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0o0f")
+}],
+"loop": 1,
+"name": &"bounce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v1e3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LeftBouncer" type="Area2D" unique_id=862283946]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028340189]
 position = Vector2(-30, 0)
 shape = SubResource("RectangleShape2D_o8qdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=487000587]
+sprite_frames = SubResource("SpriteFrames_mhvgj")
+animation = &"bounce"
