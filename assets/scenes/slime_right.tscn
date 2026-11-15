@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://qduqdqykkv8w"]
+
+[ext_resource type="Texture2D" uid="uid://df85ck2jf1tqy" path="res://assets/images/slimeRight.png" id="1_3p8wd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvnwx"]
+size = Vector2(36, 96)
+
+[node name="SlimeRight" type="Area2D" unique_id=1868535267]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1964675510]
+texture = ExtResource("1_3p8wd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063880622]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_nvnwx")
