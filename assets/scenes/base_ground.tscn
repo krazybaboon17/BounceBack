@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cja8dk06l1m87"]
+
+[ext_resource type="Texture2D" uid="uid://ba1xgkngre7hk" path="res://assets/images/bottomPlatforn.png" id="1_rv70s"]
+
+[node name="BaseGround" type="Area2D" unique_id=1027785997]
+position = Vector2(2, -3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314950566]
+position = Vector2(-1, 1.0000002)
+scale = Vector2(4.958333, 2.7083333)
+texture = ExtResource("1_rv70s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315600186]
