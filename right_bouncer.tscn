@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dti2wewskchdm"]
+
+[ext_resource type="Texture2D" uid="uid://dxygx3qhjam1j" path="res://assets/images/rightBouncer.png" id="1_0d6xo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og7xu"]
+size = Vector2(36, 96)
+
+[node name="RightBouncer" type="Area2D" unique_id=898744737]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2115183552]
+texture = ExtResource("1_0d6xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980274763]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_og7xu")
