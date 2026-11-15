@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b6u2skyx7mfyi"]
+
+[ext_resource type="Texture2D" uid="uid://8vdu0ipkd46i" path="res://assets/images/leftSlimeBounce.png" id="1_eg3si"]
+[ext_resource type="Texture2D" uid="uid://mu8q8vvv121d" path="res://assets/images/slimeLeft.png" id="2_7eogj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvgj"]
+size = Vector2(36, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x7iu"]
+atlas = ExtResource("1_eg3si")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12vow"]
+atlas = ExtResource("2_7eogj")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhvgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x7iu")
+}],
+"loop": 1,
+"name": &"bounce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12vow")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SlimeLeft" type="Area2D" unique_id=1535428874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1744324023]
+position = Vector2(-30, 0)
+shape = SubResource("RectangleShape2D_mhvgj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=138058390]
+sprite_frames = SubResource("SpriteFrames_mhvgj")
+animation = &"bounce"
