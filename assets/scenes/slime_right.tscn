@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://yba3pbwsfnj1" path="res://assets/images/rightSlimeBounce.png" id="1_8m3iv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvnwx"]
-size = Vector2(36, 96)
+size = Vector2(27, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1re5q"]
 atlas = ExtResource("1_8m3iv")
@@ -33,10 +33,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SlimeRight" type="Area2D" unique_id=1868535267]
+[node name="SlimeRight" type="StaticBody2D" unique_id=650244484]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063880622]
-position = Vector2(452, 48)
+position = Vector2(456.5, 48)
 shape = SubResource("RectangleShape2D_nvnwx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1658048154]

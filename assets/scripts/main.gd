@@ -14,7 +14,7 @@ var left_ground
 var right_ground
 var base_ground
 var tileOptions = ["Bounce", "Slime", "Ground"]
-var tiles = ["BaseGround", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce", "Bounce"]
+var tiles = ["BaseGround", "Bouncer", "Bouncer", "Bouncer", "Bouncer", "Bouncer", "Bouncer", "Bouncer"]
 
 var thing = true
 #Array with the order of all the tiles
@@ -47,6 +47,7 @@ func drawLeft():
 			left_slime = leftSlime.instantiate()
 			left_slime.position = Vector2(1, 672 - (i * 96))
 			left_slime.add_to_group("walls")
+			left_slime.add_to_group("slimes")
 			add_child(left_slime)
 		if (tiles[i] == "Ground"):
 			left_ground = groundNode.instantiate()
@@ -72,6 +73,7 @@ func drawRight():
 			right_slime = rightSlime.instantiate()
 			right_slime.position = Vector2(1, 672 - (i * 96))
 			right_slime.add_to_group("walls")
+			right_slime.add_to_group("slimes")
 			add_child(right_slime)
 		if (tiles[i] == "Ground"):
 			right_ground = rightGroundNode.instantiate()
