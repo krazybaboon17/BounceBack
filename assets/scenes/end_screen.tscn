@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcb1eyxvfxv4f" path="res://assets/scripts/end_screen.gd" id="1_lg15y"]
 [ext_resource type="FontFile" uid="uid://ouhxcdkqwe2s" path="res://assets/fonts/ARCADECLASSIC.TTF" id="1_ykoqj"]
-[ext_resource type="Texture2D" uid="uid://ch761puxmgtxq" path="res://assets/images/endBackground.jpg" id="2_sltoc"]
+[ext_resource type="Texture2D" uid="uid://bvuqyqr11s7or" path="res://assets/images/orangeBackground.jpg" id="2_sltoc"]
 
 [node name="EndScreen" type="Control" unique_id=452762184]
 layout_mode = 3
@@ -13,10 +13,11 @@ script = ExtResource("1_lg15y")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1423135549]
 layout_mode = 0
-offset_left = -104.0
-offset_top = -96.0
-offset_right = 576.0
-offset_bottom = 864.0
+offset_left = -54.0
+offset_top = 2.0
+offset_right = 1899.3333
+offset_bottom = 2882.0
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_sltoc")
 
 [node name="Label" type="Label" parent="." unique_id=596504178]
